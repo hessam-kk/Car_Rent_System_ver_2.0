@@ -25,21 +25,5 @@ Each action in the application will generate an entry in the logs.
 
 The application is divided into smaller elements (files) which allows you to organize the code.
 
-Main.cpp -> main project file.
-
-Definition_Log_in.cpp 	-> file with function definitions of a given class.
-Definition_Sign_in.cpp 	-> file with function definitions of a given class.
-Definition_User.cpp 	-> file with function definitions of a given class.
-Definition_Admin.cpp 	-> file with function definitions of a given class.
-Definition_Server.cpp 	-> file with function definitions of a given class.
-Definition_Others.cpp 	-> file with function definitions of a given class.
-
-Log_in.h 	-> file with class headers.
-Sign_in.h 	-> file with class headers.
-User.h 		-> file with class headers.
-Admin.h 	-> file with class headers.
-Server.h 	-> file with class headers.
-Others.h 	-> file with class headers.
-
 Currently, the project is in the Pre-Alfa phase, so it has not yet achieved any functionalities, and the above-mentioned functions are design assumptions.
 You can find out about all changes by checking the current page.
