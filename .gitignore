@@ -1,0 +1,29 @@
+# Ignore Visual Studio 2019 solution files
+
+*.sln
+*.pdb
+*.lastbuildstate
+*.tlog
+*.exe.recipe
+*.ilk
+*.log
+*.obj
+*.idb
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ignore Visual Studio 2019 solution foler
+
+.vs/
+/Car_Rent_System_ver_2.0/bin/x64/Debug
+/Car_Rent_System_ver_2.0/bin/intermediates/x64/Release
+
+# Ignore solution files/folders
+
+*.txt
+
+!/Car_Rent_System_ver_2.0/date_base/cars/_cars_template_/_catalog_number_/*.txt
+!/Car_Rent_System_ver_2.0/date_base/logs/*.txt
+!/Car_Rent_System_ver_2.0/date_base/users/_users_template_/_user_login_/*.txt
+!/Car_Rent_System_ver_2.0/date_base/users/admin/*.txt

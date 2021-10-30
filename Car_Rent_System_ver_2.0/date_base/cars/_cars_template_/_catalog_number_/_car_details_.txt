@@ -1,0 +1,6 @@
+_car_model_name_
+_car_type_name_
+_car_age_
+_fuel_type_
+_hp_
+_engine_size_
