@@ -5,21 +5,21 @@ Car Rent System "CRS" is console aplication. The application allows you to regis
 An admin account is created by default.
 After logging in to the account, the application allows, depending on the type of account:
 
-ADMIN:
-checking the list of cars
-adding a car
-car fall asleep
-updating the car's data
-checking the list of users and their data
-checking account / vehicle history
-deletion of the account
-adding another administrator
+# ADMIN:
+	-checking the list of cars
+	-adding a car
+	-car fall asleep
+	-updating the car's data
+	-checking the list of users and their data
+	-checking account / vehicle history
+	-deletion of the account
+	-adding another administrator
 
-USER:
-rent a vehicle
-update account details
-checking account history
-account termination
+# USER:
+	-rent a vehicle
+	-update account details
+	-checking account history
+	-account termination
 
 Each action in the application will generate an entry in the logs.
 
