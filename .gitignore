@@ -22,6 +22,7 @@
 # Ignore solution files/folders
 
 *.txt
+TODO.md
 
 !/Car_Rent_System_ver_2.0/date_base/cars/_cars_template_/_catalog_number_/*.txt
 !/Car_Rent_System_ver_2.0/date_base/logs/*.txt
