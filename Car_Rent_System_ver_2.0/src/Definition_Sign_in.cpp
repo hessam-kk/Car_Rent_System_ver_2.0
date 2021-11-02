@@ -115,6 +115,23 @@ bool registration::validation_password() //Password validation.
 		feedback_message("Password is to short. Use minimum 8 characters, 1 big letters and 1 digit. (Don't use space bar.)\n");
 		return false;
 	}
+	int isupper = 0, isdigit = 0;
+	for (int i = 0; i <= password_.length(); i++)
+	{
+		if (std::isupper(password_[i]))
+		{
+			isupper++;
+		}
+		if (std::isdigit(password_[i]))
+		{
+			isdigit++;
+		}
+	}
+	if ((isdigit == 0) || (isupper == 0))
+	{
+		feedback_message("Password must include min 8 characters, 1 big letters and 1 digit. (Don't use space bar.)\n");
+		return false;
+	}
 	return true;
 }
 
