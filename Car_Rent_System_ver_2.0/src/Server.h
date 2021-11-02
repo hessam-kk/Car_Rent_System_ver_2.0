@@ -12,7 +12,7 @@ class server
 	public:
 
 		bool is_user_exist(string login);
-		bool add_new_account_to_date_base(string login, string password, string email, string name, string surname, string date_of_birthday, string phone_number);
+		bool add_new_account_to_date_base(string login, string password, string status, string email, string name, string surname, string date_of_birthday, string phone_number);
 };
 
 #endif

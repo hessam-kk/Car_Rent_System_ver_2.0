@@ -4,7 +4,7 @@
  * DEFINITION PUBLIC FUNCTION CLASS REGISTRATION
  */
 
-bool server::is_user_exist(string login)
+bool server::is_user_exist(string login) //Checking is user already exist.
 {
 	fstream file;
 	string path_to_file = "date_base\\users\\" + login + "\\login_details.txt";
@@ -17,7 +17,7 @@ bool server::is_user_exist(string login)
 	return false;
 }
 
-bool server::add_new_account_to_date_base(string login, string password, string email, string name, string surname, string date_of_birthday, string phone_number)
+bool server::add_new_account_to_date_base(string login, string password, string status, string email, string name, string surname, string date_of_birthday, string phone_number) //Enter account details to file.
 {
 	if (create_path_to_file("date_base\\users\\", login))
 	{
@@ -25,12 +25,12 @@ bool server::add_new_account_to_date_base(string login, string password, string 
 		file.open("date_base\\users\\" + login + "\\login_details.txt", ios::out);
 		file << login << "\n";
 		file << password << "\n";
-		file << "user" << "\n";
+		file << status << "\n";
 		file.close();
 		file.open("date_base\\users\\" + login + "\\personal_details.txt", ios::out);
+		file << email << "\n";
 		file << name << "\n";
 		file << surname << "\n";
-		file << email << "\n";
 		file << date_of_birthday << "\n";
 		file << phone_number << "\n";
 		file.close();
@@ -46,7 +46,7 @@ bool server::add_new_account_to_date_base(string login, string password, string 
   * DEFINITION PRIVATE FUNCTION CLASS REGISTRATION
   */
 
-bool server::create_path_to_file(string path, string folder_name)
+bool server::create_path_to_file(string path, string folder_name) //Create new folder.
 {
 	path += folder_name;
 	if (!_mkdir(path.c_str()))
@@ -56,7 +56,7 @@ bool server::create_path_to_file(string path, string folder_name)
 	return false;
 }
 
-void server::add_log(string path, string message)
+void server::add_log(string path, string message) //Adding new log.
 {
 	fstream file;
 	file.open(path.c_str(), ios::out | ios::app);

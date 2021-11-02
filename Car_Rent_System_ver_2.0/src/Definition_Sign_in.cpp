@@ -25,12 +25,12 @@ registration::~registration() // Destructor class registration.
 bool registration::sign_in() // Function that calls up other functions needed to register new account.
 {
 	bool end_loop = true;
-	do
+	do //Entering end checking login.
 	{
 		enter_login();
 		if (validation_login())
 		{
-			if (!is_user_exist(login_))
+			if (!is_user_exist(login_)) //Checking is user already exist.
 			{
 				end_loop = false;
 				continue;
@@ -39,7 +39,7 @@ bool registration::sign_in() // Function that calls up other functions needed to
 		}
 	}while (end_loop);
 	end_loop = true;
-	do
+	do //Entering end checking password.
 	{
 		enter_password();
 		if (validation_password())
@@ -48,7 +48,7 @@ bool registration::sign_in() // Function that calls up other functions needed to
 		}
 	}while (end_loop);
 	end_loop = true;
-	do
+	do //Entering end checking email.
 	{
 		enter_email();
 		if (validation_email())
@@ -58,7 +58,7 @@ bool registration::sign_in() // Function that calls up other functions needed to
 	}
 	while (end_loop);
 	enter_personal_details();
-	if (!add_new_account_to_date_base(login_, password_, email_, name_, surname_, date_of_birthday_, phone_number_))
+	if (!add_new_account_to_date_base(login_, password_, "user", email_, name_, surname_, date_of_birthday_, phone_number_)) //Creating new account.
 	{
 		feedback_message("Registration Failed!");
 		return false;
@@ -71,7 +71,7 @@ bool registration::sign_in() // Function that calls up other functions needed to
  * DEFINITION PRIVATE FUNCTION CLASS REGISTRATION
  */
 
-void registration::enter_login() //Entering login for new account.
+void registration::enter_login() //Entering login from standard input.
 {
 	system("cls");
 	cout << "User name must include minimum 4 characters. (Don't use space bar.)\n\n";
@@ -81,7 +81,7 @@ void registration::enter_login() //Entering login for new account.
 	system("cls");
 }
 
-void registration::enter_password() //Entering password for new account.
+void registration::enter_password() //Entering password from standard input.
 {
 	cout << "\n Password must include minimum 8 characters, 1 big letters and 1 digit. (Don't use space bar.)\n\n";
 	cout << "\nEnter your password: ";
@@ -93,7 +93,7 @@ void registration::enter_password() //Entering password for new account.
 	system("cls");
 }
 
-bool registration::validation_login()
+bool registration::validation_login() //Login validation.
 {
 	if (login_.length() <= 3)
 	{
@@ -103,7 +103,7 @@ bool registration::validation_login()
 	return true;
 }
 
-bool registration::validation_password() //TODO IMPROVE VALIDATION (ADD isupper() / isdigit() / etc.).
+bool registration::validation_password() //Password validation.
 {
 	if (password_ != repeat_password_)
 	{
@@ -118,7 +118,7 @@ bool registration::validation_password() //TODO IMPROVE VALIDATION (ADD isupper(
 	return true;
 }
 
-void registration::enter_email()
+void registration::enter_email() // Entering email from standard input.
 {
 	cout << "Enter your email: ";
 	cin >> email_;
@@ -129,7 +129,7 @@ void registration::enter_email()
 	system("cls");
 }
 
-bool registration::validation_email()
+bool registration::validation_email() //Email validation.
 {
 	if (email_ != repeat_email_)
 	{
@@ -139,7 +139,7 @@ bool registration::validation_email()
 	return true;
 }
 
-void registration::enter_personal_details()
+void registration::enter_personal_details() //Entering personal details from standard input.
 {
 	cout << "Enter your name: ";
 	cin >> name_;
